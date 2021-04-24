@@ -1,3 +1,4 @@
+torch~=1.8+gpu
 torchvision~=0.9.1
 numpy~=1.20.2
 pillow~=8.2.0
