@@ -10,6 +10,7 @@ import argparse
 from torch.utils.data import DataLoader
 from torchvision.models.detection.rpn import AnchorGenerator
 from torchvision import ops
+from torchvision.transforms import FiveCrop, Compose, ToTensor
 
 
 class ImageDataset(data.Dataset):
@@ -119,3 +120,8 @@ model = torchvision.models.detection.FasterRCNN(backbone=backbone, num_classes=a
 optimizer = optim.SGD(model.parameters(), lr=0.16, momentum=0.9, weight_decay=4e-5)
 
 cuda = torch.device('cuda')
+
+transform = Compose([
+    ToTensor()
+    # TODO: Resize
+])
